@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>프로필 목록</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="header">
+    <h1>팀원 프로필</h1>
+    <div>
+      <button onclick="location.href='detail.html?mode=me'">내 정보</button>
+      <button onclick="logout()">로그아웃</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <h2>사용자 목록</h2>
+    <div id="userList" class="user-grid"></div>
+  </main>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/users.js"></script>
+</body>
+</html>

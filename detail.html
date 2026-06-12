@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>사용자 상세</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="header">
+    <h1>프로필 상세</h1>
+    <div>
+      <button onclick="location.href='index.html'">목록</button>
+      <button onclick="logout()">로그아웃</button>
+    </div>
+  </header>
+
+  <main class="container detail-layout">
+    <section class="card profile-view">
+      <img id="profilePreview" class="profile-image" src="https://via.placeholder.com/180?text=No+Image">
+      <h2 id="profileName">사용자 이름</h2>
+      <p id="profileEmail">email@example.com</p>
+      <p class="small-text" id="profileCreatedAt"></p>
+    </section>
+
+    <section class="card">
+      <h2>정보 수정</h2>
+
+      <input type="text" id="editUsername" placeholder="이름">
+      <input type="email" id="editEmail" placeholder="이메일">
+      <input type="password" id="editPassword" placeholder="새 비밀번호">
+
+      <button id="updateBtn">수정하기</button>
+      <button id="deleteBtn" class="danger">삭제하기</button>
+
+      <hr>
+
+      <h2>프로필 이미지 업로드</h2>
+      <input type="file" id="profileFile" accept="image/*">
+      <button id="uploadBtn">이미지 업로드</button>
+    </section>
+  </main>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/detail.js"></script>
+</body>
+</html>
