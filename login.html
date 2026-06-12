@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>로그인</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="auth-container">
+    <h1>프로필 관리 사이트</h1>
+    <p>로그인 후 팀원 프로필을 관리하세요.</p>
+
+    <div class="card">
+      <h2>로그인</h2>
+
+      <input type="email" id="loginEmail" placeholder="이메일">
+      <input type="password" id="loginPassword" placeholder="비밀번호">
+
+      <button id="loginBtn">로그인</button>
+
+      <p class="link-text">
+        계정이 없나요?
+        <a href="register.html">회원가입</a>
+      </p>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>
