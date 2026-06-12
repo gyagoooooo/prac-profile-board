@@ -145,7 +145,8 @@ app.add_middleware(
 )
 
 app.mount("/uploads", StaticFiles(directory=str(BASE_DIR / "uploads")), name="uploads")
-app.mount("/app", StaticFiles(directory=str(FRONTEND_DIR), html=True), name="profile_frontend")
+# app.mount("/app", StaticFiles(directory=str(FRONTEND_DIR), html=True), name="profile_frontend")
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="login")
 
@@ -452,4 +453,4 @@ async def sqlite_integrity_error_handler(request, exc):
 if __name__ == "__main__":
     import uvicorn
 
-    uvicorn.run("profile_backend_v2:app", host="0.0.0.0", port=8000, reload=True)
+    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
