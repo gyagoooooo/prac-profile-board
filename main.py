@@ -12,7 +12,7 @@ import bcrypt
 import jwt
 from fastapi import Depends, FastAPI, File, HTTPException, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, FileResponse
 from fastapi.security import OAuth2PasswordBearer
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
@@ -205,14 +205,16 @@ async def get_current_user(
     return serialize_user(user)
 
 
+# @app.get("/")
+# async def root():
+#     return {
+#         "message": "Profile Management API",
+#         "docs": "/docs",
+#         "uploads": UPLOAD_URL_PREFIX,
+#     }
 @app.get("/")
 async def root():
-    return {
-        "message": "Profile Management API",
-        "docs": "/docs",
-        "uploads": UPLOAD_URL_PREFIX,
-    }
-
+    return FileResponse("static/login.html")
 
 @app.post("/register", status_code=201)
 async def register(payload: UserCreate, db: aiosqlite.Connection = Depends(get_db)):
@@ -453,4 +455,4 @@ async def sqlite_integrity_error_handler(request, exc):
 if __name__ == "__main__":
     import uvicorn
 
-    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
+    uvicorn.run("main:app", host="0.0.0.0", port=9000, reload=True)
